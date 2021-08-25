@@ -123,12 +123,11 @@ class VideoController(object):
         Manage the video to setup the current timer.
 
         """
-        dst_value = self.pos_frame * (self.parent.slider_Video.maximum() + 1) / self.__frame_count
-        self.parent.slider_Video.blockSignals(True)
-        self.parent.slider_Video.setValue(dst_value)
-        self.parent.slider_Video.blockSignals(False)
-
         try:
+            dst_value = self.pos_frame * (self.parent.slider_Video.maximum() + 1) / self.__frame_count
+            self.parent.slider_Video.blockSignals(True)
+            self.parent.slider_Video.setValue(dst_value)
+            self.parent.slider_Video.blockSignals(False)
             current = self.parent.label_time_recent
             current.setAlignment(QtCore.Qt.AlignCenter)
             current.setText("%02d : %02d" % (self.__minute, self.__sec))
