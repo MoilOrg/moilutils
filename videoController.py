@@ -28,7 +28,7 @@ class VideoController(object):
         looping the frame showing in label user interface.
 
         """
-        if self.parent.cam:
+        if self.parent.cap:
             success, self.parent.image = self.parent.cap.read()
             if success:
                 self.fps = self.parent.cap.get(cv2.CAP_PROP_FPS)

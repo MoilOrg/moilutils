@@ -426,6 +426,11 @@ class MoilUtils(object):
         label.setPixmap(QtGui.QPixmap.fromImage(image))
 
     @classmethod
+    def remap(cls, image, mapX, mapY):
+        image = cv2.remap(image, mapX, mapY, cv2.INTER_CUBIC)
+        return image
+
+    @classmethod
     def drawRectangle(cls, image, point_1, point_2, thickness=5):
         image = cv2.rectangle(image, point_1, point_2, (0, 0, 225), thickness)
         return image
