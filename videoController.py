@@ -35,6 +35,7 @@ class VideoController(object):
                 self.pos_frame = self.parent.cap.get(cv2.CAP_PROP_POS_FRAMES)
                 self.__frame_count = float(self.parent.cap.get(cv2.CAP_PROP_FRAME_COUNT))
                 self.__showToLabel()
+                
             else:
                 self.pauseVideo()
 
@@ -46,8 +47,9 @@ class VideoController(object):
                 file = self.parent.folderOdometry + "/" + str(self.frameNumber) + ".png"
                 self.parent.image = cv2.imread(file)
                 self.parent.h, self.parent.w = self.parent.image.shape[:2]
-                self.frameNumber += 1
                 self.__showToLabel()
+                self.frameNumber += 1
+
             else:
                 self.pauseVideo()
         try:
