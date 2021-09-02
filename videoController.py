@@ -35,6 +35,7 @@ class VideoController(object):
                 self.pos_frame = self.parent.cap.get(cv2.CAP_PROP_POS_FRAMES)
                 self.__frame_count = float(self.parent.cap.get(cv2.CAP_PROP_FRAME_COUNT))
                 self.__showToLabel()
+                
             else:
                 self.pauseVideo()
 
